@@ -1,0 +1,521 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+        <title>MstarSupply - Home</title>
+        <meta content="" name="description" />
+        <meta content="" name="keywords" />
+
+        <link href="https://fonts.gstatic.com" rel="preconnect" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+            rel="stylesheet"
+        />
+
+        <link href="{% static 'img/favicon.png' %}" rel="icon" />
+        <link
+            href="{% static 'img/apple-touch-icon.png' %}"
+            rel="apple-touch-icon"
+        />
+        <link
+            href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+            rel="stylesheet"
+        />
+        <link
+            href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}"
+            rel="stylesheet"
+        />
+        <link
+            href="{% static 'vendor/boxicons/css/boxicons.min.css' %}"
+            rel="stylesheet"
+        />
+        <link
+            href="{% static 'vendor/quill/quill.snow.css' %}"
+            rel="stylesheet"
+        />
+        <link
+            href="{% static 'vendor/quill/quill.bubble.css' %}"
+            rel="stylesheet"
+        />
+        <link
+            href="{% static 'vendor/remixicon/remixicon.css' %}"
+            rel="stylesheet"
+        />
+        <link
+            href="{% static 'vendor/simple-datatables/style.css' %}"
+            rel="stylesheet"
+        />
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    </head>
+
+    <body>
+        <!-- ======= Inicio Header ======= -->
+
+        <header id="header" class="header fixed-top d-flex align-items-center">
+            <!-- Inicio Logo -->
+            <div class="d-flex align-items-center justify-content-between">
+                <a
+                    href="{% url 'index' %}"
+                    class="logo d-flex align-items-center"
+                >
+                    <img src="{% static 'img/logo.png' %}" alt="" />
+                    <span class="d-none d-lg-block">MstarSupply</span>
+                </a>
+                <i class="bi bi-list toggle-sidebar-btn"></i>
+            </div>
+            <!-- Fim Logo -->
+        </header>
+
+        <!-- ======= Fim Header ======= -->
+
+        <!-- ======= Inicio Menu Nav ======= -->
+
+        <aside id="sidebar" class="sidebar">
+            <ul class="sidebar-nav" id="sidebar-nav">
+                <!-- Inicio Dashboard Nav -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}" id="Inicio">
+                        <i class="bi bi-grid"></i>
+
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <!-- Fim Dashboard Nav -->
+
+                <!-- Inicio Produtos Nav -->
+                <li class="nav-item">
+                    <a
+                        class="nav-link collapsed"
+                        data-bs-target="#produtos-nav"
+                        data-bs-toggle="collapse"
+                        href="#"
+                    >
+                        <i class="ri-book-3-line"></i><span>Produtos</span
+                        ><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+
+                    <ul
+                        id="produtos-nav"
+                        class="nav-content collapse"
+                        data-bs-parent="#sidebar-nav"
+                    >
+                        <li>
+                            <a href="{% url 'produto' %}">
+                                <i class="bi bi-circle"></i
+                                ><span>Gerênciar Produtos</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'create_produto' %}">
+                                <i class="bi bi-circle"></i
+                                ><span>Criar Produtos</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'stock_produto' %}"><i class="bi bi-circle"></i><span>Estoque</span></a>
+                        </li>
+
+                    </ul>
+                </li>
+                <!-- Fim Produtos Nav -->
+
+                <!-- Inicio Movimentações Nav -->
+                <li class="nav-item">
+                    <a
+                        class="nav-link collapsed"
+                        data-bs-target="#movimentacao-nav"
+                        data-bs-toggle="collapse"
+                        href="#"
+                    >
+                        <i class="bi bi-journal-text"></i
+                        ><span>Movimentações</span
+                        ><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+
+                    <ul
+                        id="movimentacao-nav"
+                        class="nav-content collapse"
+                        data-bs-parent="#sidebar-nav"
+                    >
+                        <li>
+                            <a href="{% url 'movimentacao' %}">
+                                <i class="bi bi-circle"></i
+                                ><span>Gerênciar Movimentações</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'create_movimentacao' %}">
+                                <i class="bi bi-circle"></i
+                                ><span>Criar Movimentações</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Fim Movimentações Nav -->
+            </ul>
+        </aside>
+
+        <!-- ======= Fim Menu Nav ======= -->
+
+        <!-- ======= Inicio Menu Nav ======= -->
+
+        <main id="main" class="main">
+            <!-- Inicio Titulo da página -->
+            <div class="pagetitle">
+                <h1>Inicio</h1>
+
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active">
+                            <a href="{% url 'index' %}">DashBoards</a>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+            <!-- Fim Titulo da página -->
+
+            <!-- Inicio Section -->
+            <section class="section dashboard">
+                <div class="row">
+                    <!-- Inicio Colunas Lado Esquerdo -->
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <!-- Customers Card -->
+                            <div class="col-xxl-12 col-xl-12">
+                                <div class="card">
+                                    <div class="d-flex justify-content-between">
+                                        <div
+                                            class="info-card revenue-card d-inline-block"
+                                        >
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    Total Entradas
+                                                </h5>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                                                    >
+                                                        <i
+                                                            class="bi bi-arrow-down-circle"
+                                                        ></i>
+                                                    </div>
+                                                    <div class="ps-3">
+                                                        <h6>
+                                                            {{ total_entradas }}
+                                                        </h6>
+                                                        <span class="text-success small pt-1 fw-bold">
+                                                            {{ contagem_entradas }}
+                                                        </span>
+                                                        <span class="text-muted small pt-2 ps-1">transações</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="info-card sales-card d-inline-block"
+                                        >
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    Em Estoque
+                                                </h5>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <a href="{% url 'stock_produto' %}">
+                                                    <div
+                                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                                                    >
+                                                        <a href="{% url 'stock_produto' %}"><i
+                                                            class="bi bi-box-seam"
+                                                        ></i></a>
+                                                    </div></a>
+                                                    <div class="ps-3">
+                                                        <h6>
+                                                            <a href="{% url 'stock_produto' %}">{{ total_estoque }}</a>
+                                                        </h6>
+                                                        <a href="{% url 'stock_produto' %}"><span class="text-muted small pt-2 ps-1">
+                                                            acessar estoque
+                                                        </span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="info-card customers-card d-inline-block"
+                                        >
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    Total Saídas
+                                                </h5>
+
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                                                    >
+                                                        <i
+                                                            class="bi bi-arrow-up-circle"
+                                                        ></i>
+                                                    </div>
+                                                    <div class="ps-3">
+                                                        <h6>
+                                                            {{ total_saidas }}
+                                                        </h6>
+                                                        <span class="text-danger small pt-1 fw-bold">
+                                                            {{ contagem_saidas }}
+                                                        </span>
+                                                        <span class="text-muted small pt-2 ps-1">transações</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Customers Card -->
+
+                            <!-- Reports -->
+                            <div class="col-12">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                Entradas X Saídas
+                                            </h5>
+
+                                            <!-- Line Chart -->
+                                            <div
+                                                id="entradasXsaidasChart"
+                                            ></div>
+
+                                            <script>
+                                                document.addEventListener("DOMContentLoaded", function () {
+                                                  new ApexCharts(document.querySelector("#entradasXsaidasChart"), {
+                                                    series: [
+                                                      {
+                                                        name: "Saídas",
+                                                        data: {{ saidas_mes_ano|safe }}
+                                                      },
+                                                      {
+                                                        name: "Entradas",
+                                                        data: {{ entradas_mes_ano|safe }}
+                                                      }
+                                                    ],
+                                                    chart: {
+                                                      height: 350,
+                                                      type: "area",
+                                                      toolbar: {
+                                                        show: false
+                                                      }
+                                                    },
+                                                    markers: {
+                                                      size: 4
+                                                    },
+                                                    colors: ["red", "green"],
+                                                    fill: {
+                                                      type: "gradient",
+                                                      gradient: {
+                                                        shadeIntensity: 1,
+                                                        opacityFrom: 0.3,
+                                                        opacityTo: 0.4,
+                                                        stops: [0, 90, 100]
+                                                      }
+                                                    },
+                                                    dataLabels: {
+                                                      enabled: false
+                                                    },
+                                                    stroke: {
+                                                      curve: "smooth",
+                                                      width: 2
+                                                    },
+                                                    xaxis: {
+                                                  categories: {{ categorias_mes_ano|safe }},
+                                                  labels: {
+                                                    datetimeFormatter: {
+                                                      year: 'yyyy',
+                                                      month: 'MMM'
+                                                    },
+                                                    style: {
+                                                      fontSize: '14px'
+                                                    }
+                                                  }
+                                                },
+                                                    tooltip: {
+                                                      x: {
+                                                        format: "MM/yyyy"
+                                                      }
+                                                    }
+                                                  }).render();
+                                                });
+                                            </script>
+
+                                            <!-- End Line Chart -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Reports -->
+                            </div>
+                            <!-- End Recent Sales -->
+                        </div>
+                    </div>
+                    <!-- Fim Colunas Lado Esquerdo -->
+
+                    <!-- Inicio Colunas Lado Direito -->
+                    <div class="col-lg-4">
+                        <!-- Website Traffic -->
+                        <div class="card">
+                            <div class="card-body pb-0">
+                                <h5 class="card-title">Entradas de Produtos</h5>
+
+                                <div
+                                    id="entradasChart"
+                                    style="min-height: 500px"
+                                    class="echart"
+                                ></div>
+
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", () => {
+                                      echarts.init(document.querySelector("#entradasChart")).setOption({
+                                        tooltip: {
+                                          trigger: 'item'
+                                        },
+                                        legend: {
+                                          top: '5%',
+                                          left: 'center'
+                                        },
+                                        series: [{
+                                          name: 'Entrada',
+                                          type: 'pie',
+                                          radius: ['40%', '70%'],
+                                          avoidLabelOverlap: false,
+                                          label: {
+                                            show: false,
+                                            position: 'center'
+                                          },
+                                          emphasis: {
+                                            label: {
+                                              show: true,
+                                              fontSize: '18',
+                                              fontWeight: 'bold'
+                                            }
+                                          },
+                                          labelLine: {
+                                            show: false
+                                          },
+                                          data: [
+                                          {% for entradas in entradas_por_produto %}
+                                          {
+                                              value: {{ entradas.total_quantidade }},
+                                              name: "{{ entradas.produto__nome }}"
+                                            },
+                                           {% endfor %}
+                                          ]
+                                        }]
+                                      });
+                                    });
+                                </script>
+                            </div>
+                            <div class="card-body pb-0">
+                                <h5 class="card-title">Saídas de Produtos</h5>
+
+                                <div
+                                    id="saidasChart"
+                                    style="min-height: 500px"
+                                    class="echart"
+                                ></div>
+
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", () => {
+                                      echarts.init(document.querySelector("#saidasChart")).setOption({
+                                        tooltip: {
+                                          trigger: 'item'
+                                        },
+                                        legend: {
+                                          top: '5%',
+                                          left: 'center'
+                                        },
+                                        series: [{
+                                          name: 'Saida',
+                                          type: 'pie',
+                                          radius: ['40%', '70%'],
+                                          avoidLabelOverlap: false,
+                                          label: {
+                                            show: false,
+                                            position: 'center'
+                                          },
+                                          emphasis: {
+                                            label: {
+                                              show: true,
+                                              fontSize: '18',
+                                              fontWeight: 'bold'
+                                            }
+                                          },
+                                          labelLine: {
+                                            show: false
+                                          },
+                                          data: [
+                                          {% for saidas in saidas_por_produto %}
+                                          {
+                                              value: {{ saidas.total_quantidade }},
+                                              name: "{{ saidas.produto__nome }}"
+                                            },
+                                           {% endfor %}
+                                          ]
+                                        }]
+                                      });
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <!-- End Website Traffic -->
+                    </div>
+                    <!-- Fim Colunas Lado Direito -->
+                </div>
+            </section>
+            <!-- Fim Section -->
+        </main>
+
+        <!-- ======= Fim Main ======= -->
+
+        <!-- ======= Inicio Footer ======= -->
+
+        <footer id="footer" class="footer">
+            <div class="copyright">
+                &copy; Copyright <strong><span>MstarSupply</span></strong
+                >. All Rights Reserved
+            </div>
+        </footer>
+
+        <!-- Fim Footer -->
+
+        <a
+            href="#"
+            class="back-to-top d-flex align-items-center justify-content-center"
+            ><i class="bi bi-arrow-up-short"></i
+        ></a>
+
+        <!-- Inicio Arquivos Vendor JS  -->
+
+        <script src="{% static 'vendor/apexcharts/apexcharts.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'vendor/chart.js/chart.umd.js' %}"></script>
+        <script src="{% static 'vendor/echarts/echarts.min.js' %}"></script>
+        <script src="{% static 'vendor/quill/quill.min.js' %}"></script>
+        <script src="{% static 'vendor/simple-datatables/simple-datatables.js' %}"></script>
+        <script src="{% static 'vendor/tinymce/tinymce.min.js' %}"></script>
+        <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+
+        <!-- Fim Arquivos Vendor-->
+    </body>
+</html>
