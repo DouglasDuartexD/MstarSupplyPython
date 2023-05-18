@@ -3,8 +3,6 @@ from .models import Produto
 from .models import Movimentacao
 from django.forms import Select
 from django.db.models import Q, Sum
-from bootstrap_datepicker_plus.widgets import DateTimePickerInput
-
 
 # Gera o formulário para o cadastro de produtos
 class ProdutoForm(forms.ModelForm):
